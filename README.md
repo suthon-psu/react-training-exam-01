@@ -7,7 +7,7 @@
 
 สร้างแอพพลิเคชัน Shopping Cart Interface โดยใช้ React, MUI, React Router, Zustand และ React Hook Form
 
-เราได้เตรียมไฟล์ layout และ CSS ให้แล้วในโฟลเดอร์ `/src/components/` และ `/src/routes/`:
+เราได้เตรียมไฟล์ layout และ CSS ให้แล้วในโฟลเดอร์ `/app/components/` และ `/app/routes/`:
 - `AppLayout.tsx` - Layout หลักพร้อม Navigation
 - `Products.tsx` - หน้า Products List
 - `Cart.tsx` - หน้า Shopping Cart
@@ -18,9 +18,32 @@
 
 ## ส่วนที่ 1: การติดตั้ง (10 คะแนน)
 
+### 1.1 ติดตั้ง Dependencies (5 คะแนน)
+
 ติดตั้ง packages ที่จำเป็น:
 ```bash
 npm install zustand react-hook-form
+```
+
+### 1.2 ตั้งค่า Project Structure (5 คะแนน)
+
+สร้างโฟลเดอร์และไฟล์ตามโครงสร้างนี้:
+```
+app/
+├── components/
+│   ├── AppLayout.tsx (ให้แล้ว)
+├── routes/
+│   ├── Cart.tsx (ให้แล้ว)
+│   └── Products.tsx (ให้แล้ว)
+├── store/
+│   └── cartStore.ts
+│   └── productStore.ts
+├── types/
+│   └── CartItem.ts
+│   └── Product.ts
+└── root.tsx
+└── routes.ts
+└── mockData.tsx
 ```
 
 
@@ -28,18 +51,18 @@ npm install zustand react-hook-form
 
 ### 2.1 สร้าง Product Store (20 คะแนน)
 
-สร้างไฟล์ `src/store/productStore.ts`:
+สร้างไฟล์ `app/store/productStore.ts`:
 
 **State:**
 - `products: Product[]` - รายการสินค้าทั้งหมด
 
 **Actions:**
 - `loadProducts()` - โหลดข้อมูลจาก mockProducts
-- `getProductsByCategory(category: string)` - กรองสินค้าตาม category
+- `getProductsByCategory(category: string)` - กรองสินค้าตาม category (ไม่มีการเปลียน state)
 
 ### 2.2 สร้าง Cart Store (20 คะแนน)
 
-สร้างไฟล์ `src/store/cartStore.ts`:
+สร้างไฟล์ `app/store/cartStore.ts`:
 
 **State:**
 - `items: CartItem[]` - รายการสินค้าในตะกร้า
@@ -56,10 +79,9 @@ npm install zustand react-hook-form
 
 ## ส่วนที่ 3: React Router (10 คะแนน)
 
-
 ในไฟล์ `App.tsx`:
 - Import `useNavigate`
-- ใช้ `navigate(item.path)` ใน menu items
+- ใช้ `navigate(item.path)` ใน menu items (ดู route จาก `routes.ts`)
 - แสดงจำนวนสินค้าในตะกร้าที่ header และ sidebar
 - ใช้ `<Outlet/>` ในจุดที่เหมาะสม
 
@@ -69,13 +91,10 @@ npm install zustand react-hook-form
 
 ### 4.1 เชื่อมต่อกับ Stores (10 คะแนน)
 
-แก้ไขไฟล์ `src/components/Products.tsx`:
+แก้ไขไฟล์ `app/components/Products.tsx`:
 
 1. **Import และใช้ stores:**
    ```typescript
-   import { useProductStore } from '../store/productStore';
-   import { useCartStore } from '../store/cartStore';
-   
    const { products, loadProducts, getProductsByCategory, sortProducts } = useProductStore();
    const { items, addToCart, updateQuantity, removeFromCart } = useCartStore();
    ```
@@ -101,7 +120,7 @@ npm install zustand react-hook-form
 
 ### 5.1 เชื่อมต่อกับ Cart Store (10 คะแนน)
 
-แก้ไขไฟล์ `src/components/Cart.tsx`:
+แก้ไขไฟล์ `app/components/Cart.tsx`:
 
 1. **Import และใช้ cart store:**
    ```typescript
