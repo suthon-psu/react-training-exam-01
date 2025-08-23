@@ -9,7 +9,6 @@ import {
   CardMedia,
   Button,
   Chip,
-  TextField,
   FormControl,
   InputLabel,
   Select,
@@ -23,7 +22,6 @@ import {
   ShoppingCart,
   FilterList,
 } from '@mui/icons-material';
-import { mockProducts } from '~/constants';
 
 const Products: React.FC = () => {
   // TODO: Students should get data from Zustand store
@@ -33,7 +31,7 @@ const Products: React.FC = () => {
   const mockCart = [];
 
   // TODO: Students should implement filtering and sorting
-  const filteredProducts = mockProducts;
+  const filteredProducts = [] as any[];
 
   return (
     <Container maxWidth="lg" sx={{ mt: 4, mb: 4 }}>
