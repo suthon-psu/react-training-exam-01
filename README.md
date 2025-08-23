@@ -47,9 +47,9 @@ app/
 ```
 
 
-## ส่วนที่ 2: Zustand Stores (40 คะแนน)
+## ส่วนที่ 2: Zustand Stores (30 คะแนน)
 
-### 2.1 สร้าง Product Store (20 คะแนน)
+### 2.1 สร้าง Product Store (15 คะแนน)
 
 สร้างไฟล์ `app/store/productStore.ts`:
 
@@ -60,7 +60,7 @@ app/
 - `loadProducts()` - โหลดข้อมูลจาก mockProducts
 - `getProductsByCategory(category: string)` - กรองสินค้าตาม category (ไม่มีการเปลียน state)
 
-### 2.2 สร้าง Cart Store (20 คะแนน)
+### 2.2 สร้าง Cart Store (15 คะแนน)
 
 สร้างไฟล์ `app/store/cartStore.ts`:
 
@@ -87,7 +87,7 @@ app/
 
 ---
 
-## ส่วนที่ 4: Products Component (20 คะแนน)
+## ส่วนที่ 4: Products Component (25 คะแนน)
 
 ### 4.1 เชื่อมต่อกับ Stores (10 คะแนน)
 
@@ -103,7 +103,7 @@ app/
 3. **Implement filtering:**
    - Filter ตาม category
 
-### 4.2 Cart Functionality (10 คะแนน)
+### 4.2 Cart Functionality (15 คะแนน)
 
 1. **ตรวจสอบสินค้าในตะกร้า:**
    - แสดงปุ่ม quantity controls หากสินค้าอยู่ในตะกร้า
@@ -139,9 +139,9 @@ app/
 
 ---
 
-## ส่วนที่ 6: Checkout Form (10 คะแนน)
+## ส่วนที่ 6: Checkout Form (15 คะแนน)
 
-### 6.1 React Hook Form ใน Checkout Dialog (10 คะแนน)
+### 6.1 React Hook Form ใน Checkout Dialog (15 คะแนน)
 
 ในไฟล์ `Cart.tsx` เพิ่ม React Hook Form:
 
@@ -188,11 +188,11 @@ app/
 | ส่วน | คะแนน | รายละเอียด |
 |------|-------|------------|
 | **Setup** | 10 | การติดตั้งและโครงสร้างไฟล์ |
-| **Zustand** | 40 | Product Store (20) + Cart Store (20) |
+| **Zustand** | 30 | Product Store (20) + Cart Store (20) |
 | **Router** | 10 | Navigation ระหว่างหน้าได้ |
-| **Products** | 20 | แสดงสินค้า, filter, add to cart |
+| **Products** | 25 | แสดงสินค้า, filter, add to cart |
 | **Cart** | 10 | แสดงตะกร้า, จัดการสินค้า, คำนวณราคา |
-| **Checkout** | 10 | Form validation และ submission |
+| **Checkout** | 15 | Form validation และ submission |
 | **รวม** | **100** |  |
 
 
